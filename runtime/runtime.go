@@ -510,8 +510,8 @@ func (r *interpreterRuntime) newInterpreter(
 				return r.loadContract(compositeType, runtimeStorage)
 			},
 		),
-		interpreter.WithImportProgramHandler(
-			r.importProgramHandler(runtimeInterface),
+		interpreter.WithImportLocationHandler(
+			r.importLocationHandler(runtimeInterface),
 		),
 	}
 
@@ -529,10 +529,10 @@ func (r *interpreterRuntime) newInterpreter(
 	)
 }
 
-func (r *interpreterRuntime) importProgramHandler(runtimeInterface Interface) interpreter.ImportProgramHandlerFunc {
+func (r *interpreterRuntime) importLocationHandler(runtimeInterface Interface) interpreter.ImportLocationHandlerFunc {
 	importResolver := r.importResolver(runtimeInterface)
 
-	return func(inter *interpreter.Interpreter, location ast.Location) *ast.Program {
+	return func(inter *interpreter.Interpreter, location ast.Location) interpreter.Import {
 		program, err := importResolver(location)
 		if err != nil {
 			panic(err)
@@ -543,7 +543,7 @@ func (r *interpreterRuntime) importProgramHandler(runtimeInterface Interface) in
 			panic(err)
 		}
 
-		return program
+		return interpreter.ProgramImport{Program: program}
 	}
 }
 
