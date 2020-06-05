@@ -78,7 +78,7 @@ Comments may be nested.
 /* /* this */ is a valid comment */
 ```
 
-Multi-line comments are balanced.
+Mutli-line comments are balanced.
 
 ```cadence,file=invalid-nested-comment.cdc
 /* this is a // comment up to here */ this is not part of the comment */
@@ -406,7 +406,7 @@ and can represent values in the following ranges:
 
 The types are independent types, i.e. not subtypes of each other.
 
-See the section about [arithmetic operators](#arithmetic) for further
+See the section about [artihmetic operators](#arithmetic) for further
 information about the behavior of the different integer types.
 
 ```cadence
@@ -536,7 +536,7 @@ i.e., all non-resource types are a subtype of it.
 ```cadence
 // Declare a variable that has the type `AnyStruct`.
 // Any non-resource typed value can be assigned to it, for example an integer,
-// but not resource-typed values.
+// but not resoure-typed values.
 //
 var someStruct: AnyStruct = 1
 
@@ -619,7 +619,7 @@ let anything: AnyStruct = maybeInt
 ```
 
 [Conditional downcasting](#conditional-downcasting-operator) allows coercing
-a value which has the type `AnyStruct` or `AnyResource` back to its original type.
+a value which has the type `AnyStruct` or `AnyResource` back to its orignal type.
 
 ### Optionals
 
@@ -1003,7 +1003,7 @@ Strings have multiple built-in functions you can use.
   Returns a string slice of the characters
   in the given string from start index `from` up to,
   but not including, the end index `upTo`.
-  This function creates a new string whose length is `upTo - from`.
+  This function creates a new string whose length is `upto - from`.
   It does not modify the original string.
   If either of the parameters are out of
   the bounds of the string, the function will fail.
@@ -2891,7 +2891,7 @@ let a = 1
 
 Array literals are inferred based on the elements of the literal, and to be variable-size.
 
-```cadence,file=type-inference-integers.cdc
+```cadence,file=type-inference-intergers.cdc
 let integers = [1, 2]
 // `integers` has type `[Int]`
 
@@ -2939,7 +2939,7 @@ let array = []
 
 // Instead, specify the array type and the concrete element type, e.g. `Int`.
 //
-let array: [Int] = []
+let arrary: [Int] = []
 ```
 
 ```cadence
@@ -4307,14 +4307,13 @@ a declaration can be accessed or called.
   on an instance of the type in an outer scope.
   This does not allow the declaration to be publicly writable though.
 
-  An element is made publicly accessible / by any code
-  by using the `pub` or `access(all)` keywords.
+  An element is made public by using the `pub` or `access(all)` keywords.
 
 - **access(account)** means the declaration is only accessible/visible in the
   scope of the entire account where it is defined. This means that
   other contracts in the account are able to access it,
 
-  An element is made accessible by code in the same account (e.g. other contracts)
+  An element is specified with account access
   by using the `access(account)` keyword.
 
 - **access(contract)** means the declaration is only accessible/visible in the
@@ -4322,7 +4321,7 @@ a declaration can be accessed or called.
   and functions that are defined in the same contract can access it,
   but not other contracts in the same account.
 
-  An element is made accessible by code in the same contract
+  An element is specified with contract access
   by using the `access(contract)` keyword.
 
 - Private or **access(self)** means the declaration is only accessible/visible
@@ -4332,8 +4331,7 @@ a declaration can be accessed or called.
   accessed by functions of the type is part of,
   not by code in an outer scope.
 
-  An element is made accessible by code in the same containing type
-  by using the `access(self)` keyword.
+  This level is specified by using the `access(self)` keyword.
 
 **Access level must be specified for each declaration**
 
@@ -4341,30 +4339,31 @@ The `(set)` suffix can be used to make variables also publicly writable.
 
 To summarize the behavior for variable declarations, constant declarations, and fields:
 
-| Declaration kind | Access modifier          | Read scope                                           | Write scope       |
-|:-----------------|:-------------------------|:-----------------------------------------------------|:------------------|
-| `let`            | `priv` / `access(self)`  | Current and inner                                    | *None*            |
-| `let`            | `access(contract)`       | Current, inner, and containing contract              | *None*            |
-| `let`            | `access(account)`        | Current, inner, and other contracts in same account  | *None*            |
-| `let`            | `pub`,`access(all)`      | **All**                                              | *None*            |
-| `var`            | `access(self)`           | Current and inner                                    | Current and inner |
-| `var`            | `access(contract)`       | Current, inner, and containing contract              | Current and inner |
-| `var`            | `access(account)`        | Current, inner, and other contracts in same account  | Current and inner |
-| `var`            | `pub` / `access(all)`    | **All**                                              | Current and inner |
-| `var`            | `pub(set)`               | **All**                                              | **All**           |
+| Declaration kind | Access modifier    | Read scope                            | Write scope       |
+|:-----------------|:-------------------|:--------------------------------------|:------------------|
+| `let`            | `access(self)`     | Current and inner                     | *None*            |
+| `let`            | `access(contract)` | Current, inner, and its contract      | *None*            |
+| `let`            | `access(account)`  | Current, inner, and account contracts | *None*            |
+| `let`            | `pub`,`access(all)`| **All**                               | *None*            |
+| `var`            | `access(self)`     | Current and inner                     | Current and inner |
+| `var`            | `access(contract)` | Current, inner, and its contract      | Current and inner |
+| `var`            | `access(account)`  | Current, inner, and account contracts | Current and inner |
+| `var`            | `pub`,`access(all)`| **All**                               | Current and inner |
+| `var`            | `pub(set)`         | **All**                               | **All**           |
 
-To summarize the for functions:
+To summarize the behavior for functions, structures, resources, and interfaces:
 
-| Access modifier          | Access scope                                        |
-|:-------------------------|:----------------------------------------------------|
-| `priv` / `access(self)`  | Current and inner                                   |
-| `access(contract)`       | Current, inner, and containing contract             |
-| `access(account)`        | Current, inner, and other contracts in same account |
-| `pub` / `access(all)`    | **All**                                             |
+| Declaration kind                                                    | Access modifier       | Access scope                          |
+|:--------------------------------------------------------------------|:----------------------|:--------------------------------------|
+| `fun`,`struct`,`resource`,`struct interface`,`resource interface`   | `access(self)`        | Current and inner                     |
+| `fun`,`struct`,`resource`,`struct interface`,`resource interface`   | `access(contract)`    | Current, inner, and its contract      |
+| `fun`,`struct`,`resource`,`struct interface`,`resource interface`   | `access(account)`     | Current, inner, and account contracts |
+| `fun`,`struct`,`resource`,`struct interface`,`resource interface`   | `pub`,`access(all)`   | **All**                               |
 
-Declarations of structures, resources, events, and [contracts](#contracts) can only be public.
-However, even though the declarations/types are publicly visible,
-resources can only be created from inside the contract they are declared in.
+Currently, all contract defined types must have an access declaration, but
+only code within the [contract](#contracts) in which the type is declared
+is allowed to create instances of the type.
+See the linked contracts section for more information.
 
 ```cadence,file=access-control-globals.cdc
 // Declare a private constant, inaccessible/invisible in outer scope.
@@ -4376,7 +4375,7 @@ access(self) let a = 1
 pub let b = 2
 ```
 
-```cadence,file=access-control-struct.cdc
+```cadence,file=acess-control-struct.cdc
 // Declare a public struct, accessible/visible in all scopes.
 //
 pub struct SomeStruct {
@@ -4793,7 +4792,7 @@ pub struct AnImplementation: AnInterface {
 ### Interfaces in Types
 
 Interfaces can be used in types: The type `{I}` is the type of all objects
-that implement the interface `I`.
+that implement the interfaace `I`.
 
 This is called a [restricted type](#restricted-types):
 Only the functionality (members and functions) of the interface can be used
@@ -5154,14 +5153,14 @@ Structure and resource types can be **restricted**. Restrictions are interfaces.
 Restricted types only allow access to a subset of the members and functions
 of the type that is restricted, indicated by the restrictions.
 
-The syntax of a restricted type is `T{U1, U2, ... Un}`,
-where `T` is the restricted type, a concrete resource or structure type,
+The syntax of a restriced type is `T{U1, U2, ... Un}`,
+where `T` is the restricted type, a concrete resource or strucure type,
 and the types `U1` to `Un` are the restrictions, interfaces that `T` conforms to.
 
 Only the members and functions of the union of the set of restrictions are available.
 
 Restricted types are useful for increasing the safety in functions
-that are supposed to only work on a subset of the type.
+that are suposed to only work on a subset of the type.
 For example, by using a restricted type for a parameter's type,
 the function may only access the functionality of the restriction:
 If the function accidentally attempts to access other functionality,
@@ -5253,7 +5252,7 @@ and `AnyResource`, the supertype of all resources.
 For example, restricted type `AnyResource{HasCount}` is any resource type
 for which only the functionality of the `HasCount` resource interface can be used.
 
-The restricted types `AnyStruct` and `AnyResource` can be omitted.
+The restricted types `AnyStruct` and `AnyResource` can be ommited.
 For example, the type `{HasCount}` is any resource that implements
 the resource interface `HasCount`.
 
@@ -5301,7 +5300,7 @@ let id2 = getID(hasID2)
 // `id2` is "2"
 ```
 
-Only concrete types may be restricted, e.g., the restricted type may not be an array,
+Only concrete types may be restriced, e.g., the restricted type may not be an array,
 the type `[T]{U}` is invalid.
 
 Restricted types are also useful when giving access to resources and structures
@@ -5401,7 +5400,7 @@ countRef.count  // is `43`
 //
 countRef.increment()
 
-// Invalid: Cannot conditionally downcast to reference type `&Counter`,
+// Invalid: Cannot failably downcast to reference type `&Counter`,
 // as the reference `countRef` is unauthorized.
 //
 // The counter value has type `Counter`, which is a subtype of `{HasCount}`,
@@ -5416,7 +5415,7 @@ let counterRef2: &Counter = countRef as? &Counter
 //
 let authCountRef: auth &{HasCount} = &counter as auth &{HasCount}
 
-// Conditionally downcast to reference type `&Counter`.
+// Failably downcast to reference type `&Counter`.
 // This is valid, because the reference `authCountRef` is authorized
 //
 let counterRef3: &Counter = authCountRef as? &Counter
@@ -5577,7 +5576,7 @@ to all its stored objects.
 
    Returns a copy of a structure stored in account storage, without removing it from storage.
 
-   If no structure is stored under the given path, the function returns `nil`.
+   If no strucure is stored under the given path, the function returns `nil`.
    If there is a structure stored, it is copied.
    The structure stays stored in storage after the function returns.
 
@@ -5794,7 +5793,7 @@ Capabilities are created using the `link` function of an authorized account (`Au
 
 - `fun link<T: &Any>(_ newCapabilityPath: Path, target: Path): Capability?`
 
-  `newCapabilityPath` is the public or private path identifying the new capability.
+  `newCapabilityPath` is the public or private path identifiying the new capability.
 
   `target` is any public, private, or storage path that leads to the object
   that will provide the functionality defined by this capability.
@@ -6007,7 +6006,7 @@ pub contract SomeContract {
 
 Contracts cannot be nested in each other.
 
-```cadence,file=contract-invalid-nesting.cdc
+```cadence,file=contract-invalidnesting.cdc
 pub contract Invalid {
 
     // Invalid: Contracts cannot be nested in any other type.
@@ -6281,7 +6280,7 @@ pub contract ExampleContract: InterfaceExample {
     // The contract doesn't need to redeclare the `NestedInterface` interface
     // because it is already declared in the contract interface
 
-    // The resource has to refer to the resource interface using the name
+    // The resource has to refer to the resrouce interface using the name
     // of the contract interface to access it
     //
     pub resource Composite: InterfaceExample.NestedInterface {
@@ -6390,92 +6389,19 @@ transaction {
 }
 ```
 
-Then follow three optional main phases:
+Then, three optional main phases:
 Preparation, execution, and postconditions, only in that order.
 Each phase is a block of code that executes sequentially.
 
-- The **prepare phase** (declared using the `prepare` keyword)
-  acts like the initializer in a composite type,
-  i.e., it has to initialize the local fields of the transaction
-  that can then be used in the execution phase.
+Here is an empty Cadence transaction which contains no logic but demonstrates the syntax for each type of block, in the order these blocks will be executed:
 
-  The prepare phase also has access to the authorized account objects
-  (`AuthAccount`) of the accounts that signed it.
-  These authorized account objects have to be declared as parameters
-  to the prepare phase, one for each signer of the transaction:
-
-  ```cadence,file=prepare-args.cdc
-  // There needs to be exactly as many `AuthAccount`-typed parameters
-  // as there are signers for the transaction.
-  // In this case, there would be two signers
-
-  prepare(signer1: AuthAccount, signer2: AuthAccount) {
-      // ...
-  }
-  ```
-
-  `AuthAccount` objects have the permissions
-  to read from and write to the private storage
-  of the account, which cannot be directly accessed anywhere else.
-
-- The **execute phase** (declared using the `execute` keyword)
-  is where interaction with other accounts
-  and contracts should usually happen.
-
-  This usually involves interacting with contracts with public types
-  and functions, calling functions using references to other accounts'
-  objects, and performing specific computation on these values.
-
-  This phase does not have access to any signer's authorized account object
-  and can only access public contract fields and functions,
-  public account objects (`PublicAccount`) using the built-in `getAccount`
-  function, and any local transaction variables
-  that were initialized in the `prepare` block.
-
-  ```cadence,file=execute.cdc
-    execute {
-        // Invalid: Cannot access the authorized account object,
-        // as `account1` is not in scope
-
-        let resource <- account1.load<@Resource>(from: /storage/resource)
-        destroy resource
-
-        // Valid: Can access any account's public Account object
-
-        let publicAccount = getAccount(0x03)
-  }
-
-  ```
-
-- The **postcondition phase** (declared using the `post` keyword)
-  is where the transaction can check
-  that its functionality was executed correctly with specific condition checks.
-
-  If any of the condition checks result in `false`, the transaction will fail
-  and be completely reverted.
-
-  Only condition checks are allowed in this section. No actual computation
-  or modification of values is allowed.
-
-  ```cadence,file=post.cdc
-    post {
-        result.balance == 30: "Balance after transaction is incorrect!"
+```swift
+transaction {
+    prepare(signer1: AuthAccount, signer2: AuthAccount) {
+        // ...
     }
 
-  ```
-
-```cadence,file=transaction-declaration.cdc
-// Optional: Importing external types from other accounts using `import`.
-import HelloWorld from 0x01
-
-transaction {
-
-    // Optional: type declarations and fields, which must be initialized in `prepare`.
-
-    // The prepare phase needs to have as many account parameters
-    // as there are signers for the transaction.
-    //
-    prepare(signer1: AuthAccount) {
+    pre {
         // ...
     }
 
@@ -6488,6 +6414,122 @@ transaction {
     }
 }
 ```
+
+Although optional, each block serves a specific purpose when executing a transaction and it is recommended that developers use these blocks when creating their transactions. The following will detail the purpose of and how to use each block.
+
+## Prepare
+
+The `prepare` ****block is used when access to **signing accounts** is required for your transaction. 
+
+Direct access to signing accounts is **only possible inside the** `prepare` **block.** 
+
+For each signer of the transaction the signing account is passed as an argument to the `prepare` block. For example, if the transaction has three signers, the prepare **must** have three parameters of type `AuthAccount`.
+
+```swift
+ prepare(signer1: AuthAccount) {
+      // ...
+ }
+```
+
+
+As a best practice, only use the `prepare` block to define and execute logic that requires access to signing accounts, and *move all other logic elsewhere*. Modifications to accounts can have significant implications, so keep this block clear of unrelated logic to ensure users of your contract are able to easily read and understand logic related to accounts.
+
+The prepare block serves a similar purpose as the initializer of a contract/resource/structure.
+
+For example, if a transaction performs a token transfer, put the withdrawal in the `prepare` block, as it requires access to the account storage, but perform the deposit in the `execute` block.
+
+`AuthAccount` objects have the permissions
+to read from and write to the private storage
+of the account, which cannot be directly accessed anywhere else.
+
+## Pre
+
+The `pre` block is executed after the `prepare` block, and is used for checking if explicit conditions hold before executing the remainder of the transaction. A common example would be checking requisite balances before transferring tokens between accounts.
+
+```swift
+pre {
+    sendingAccount.balance > 0
+}
+```
+
+If the `pre` block throws an error, or does not return `true` the remainder of the transaction is not executed and it will be completely reverted.
+
+## **Execute**
+
+The `execute` block does exactly what it says, it execute the main logic of the transaction. This block is optional, but it is a best practice to add your main transaction logic in the section, so it is explicit.
+
+```swift
+execute {
+    // Invalid: Cannot access the authorized account object,
+    // as `account1` is not in scope
+    let resource <- account1.load<@Resource>(from: /storage/resource)
+    destroy resource
+
+    // Valid: Can access any account's public Account object
+    let publicAccount = getAccount(0x03)
+}
+```
+
+You **may not** access account objects in the `execute` block, but you may get an account's public information (resources, contract methods, etc.)
+
+## **Post**
+
+Statements inside of the `post` block are used to verify that your transaction logic has been executed properly. It contains zero or more condition checks.
+
+For example, the a transfer transaction might ensure that the final balance has a certain value, or e.g. it was incremented by a specific amount.
+
+```swift
+post {
+    result.balance == 30: "Balance after transaction is incorrect!"
+}
+```
+
+If any of the condition checks result in `false`, the transaction will fail and be completely reverted.
+
+Only condition checks are allowed in this section. No actual computation or modification of values is allowed.
+
+**A Note about `pre` and `post` Blocks**
+
+Another function of the `pre` and `post` blocks is to help provide information about how the effects of a transaction on the accounts and resources involved. This is essential because users may want to verify what a transaction does before submitting it. `pre` and `post` blocks provide a way to introspect transactions before they are executed.
+
+For example, in the future the blocks could be analyzed and interpreted to the user in the software they are using, e.g. " this transaction will transfer 30 tokens from A to B. The balance of A will decrease by 30 tokens and the balance of B will increase by 30 tokens."
+
+## Summary
+
+Cadence transactions use blocks to make the transaction's code/intent more readable and to provide a way for developer to separate potentially 'unsafe' account modifying code from regular transaction logic, as well as provide a way to check for error prior to, as well as after transaction execution, and abort the transaction if any are found.
+
+The following is a brief summary of how to use the `prepare` ,`pre`, `execute` and `post` blocks in a Cadence transaction.
+
+```swift
+transaction {
+    prepare(signer1: AuthAccount) {
+        // Access signing accounts for this transaction. 
+        //
+        // Avoid logic that does not need access to signing accounts.
+        // 
+        // Signing accounts can't be accesed anywhere else in the transaction.
+    }
+
+    pre {
+        // Define conditions that must be true 
+        // for this transaction to execute.
+    }
+
+    execute {
+        // The main transaction logic goes here, but you can access
+        // any public information or resources published by any account.
+    }
+
+    post {
+        // Define the expected state of things 
+        // as they should be after the transaction executed.
+        //
+        // Also used to provide information about what changes 
+        // this transaction will make to accounts in this transaction.
+    }
+}
+```
+
 
 ### Importing and using Deployed Contract Code
 
