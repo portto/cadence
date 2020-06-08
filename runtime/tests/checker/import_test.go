@@ -25,11 +25,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/parser"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/parser"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 func TestCheckInvalidImport(t *testing.T) {

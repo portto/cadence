@@ -21,9 +21,9 @@ package checker
 import (
 	"testing"
 
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/sema"
-	"github.com/onflow/cadence/runtime/stdlib"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/stdlib"
 )
 
 func ParseAndCheckWithPanic(t *testing.T, code string) (*sema.Checker, error) {

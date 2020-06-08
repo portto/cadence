@@ -21,9 +21,9 @@ package stdlib
 import (
 	"fmt"
 
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/sema"
-	"github.com/onflow/cadence/runtime/trampoline"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/trampoline"
 )
 
 // This file defines functions built-in to Cadence.

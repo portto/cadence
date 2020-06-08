@@ -24,8 +24,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/interpreter"
 )
 
 func TestInterpretPath(t *testing.T) {

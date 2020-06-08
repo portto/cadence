@@ -21,9 +21,9 @@ package runtime
 import (
 	"time"
 
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/interpreter"
 )
 
 type storageKey struct {

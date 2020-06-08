@@ -1,7 +1,7 @@
 package trampoline
 
 import (
-	"github.com/onflow/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/errors"
 )
 
 // Based on "Stackless Scala With Free" by Rúnar Óli Bjarnason:

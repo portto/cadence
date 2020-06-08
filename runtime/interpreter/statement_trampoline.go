@@ -19,7 +19,7 @@
 package interpreter
 
 import (
-	"github.com/onflow/cadence/runtime/trampoline"
+	"github.com/portto/cadence/runtime/trampoline"
 )
 
 type StatementTrampoline struct {

@@ -24,7 +24,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 func TestDivModUInt8(t *testing.T) {

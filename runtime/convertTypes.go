@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/onflow/cadence"
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 // exportType converts a runtime type to its corresponding Go representation.

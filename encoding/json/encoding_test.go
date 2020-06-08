@@ -27,10 +27,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence"
-	"github.com/onflow/cadence/encoding/json"
-	"github.com/onflow/cadence/runtime"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence"
+	"github.com/portto/cadence/encoding/json"
+	"github.com/portto/cadence/runtime"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 type encodeTest struct {

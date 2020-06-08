@@ -21,9 +21,9 @@ package sema
 import (
 	"fmt"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/common/intervalst"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/common/intervalst"
 )
 
 type Position struct {

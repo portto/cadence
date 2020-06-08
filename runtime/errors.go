@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 // Error is the containing type for all errors produced by the runtime.

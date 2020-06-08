@@ -19,7 +19,7 @@
 package sema
 
 import (
-	"github.com/onflow/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/ast"
 )
 
 func (checker *Checker) VisitDestroyExpression(expression *ast.DestroyExpression) (resultType ast.Repr) {

@@ -21,7 +21,7 @@ package main
 import (
 	"os"
 
-	"github.com/onflow/cadence/runtime/cmd/execute"
+	"github.com/portto/cadence/runtime/cmd/execute"
 )
 
 func main() {

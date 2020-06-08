@@ -19,8 +19,8 @@
 package utils
 
 import (
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 type OccurrenceMatcher struct {

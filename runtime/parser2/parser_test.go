@@ -26,7 +26,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/goleak"
 
-	"github.com/onflow/cadence/runtime/parser2/lexer"
+	"github.com/portto/cadence/runtime/parser2/lexer"
 )
 
 func TestMain(m *testing.M) {

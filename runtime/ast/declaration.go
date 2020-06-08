@@ -18,7 +18,7 @@
 
 package ast
 
-import "github.com/onflow/cadence/runtime/common"
+import "github.com/portto/cadence/runtime/common"
 
 type Declaration interface {
 	Element

@@ -19,7 +19,7 @@
 package ast
 
 import (
-	"github.com/onflow/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/errors"
 )
 
 //go:generate stringer -type=Operation

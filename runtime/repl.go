@@ -21,13 +21,13 @@ package runtime
 import (
 	"sort"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/parser"
-	"github.com/onflow/cadence/runtime/sema"
-	"github.com/onflow/cadence/runtime/stdlib"
-	"github.com/onflow/cadence/runtime/trampoline"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/parser"
+	"github.com/portto/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/stdlib"
+	"github.com/portto/cadence/runtime/trampoline"
 )
 
 type REPL struct {

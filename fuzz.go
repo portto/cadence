@@ -21,9 +21,9 @@ package cadence
 import (
 	"unicode/utf8"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/parser"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/parser"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 func Fuzz(data []byte) int {

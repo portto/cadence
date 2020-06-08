@@ -21,7 +21,7 @@ package sema
 import (
 	"github.com/raviqqe/hamt"
 
-	"github.com/onflow/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/ast"
 )
 
 type ResourceUse struct {

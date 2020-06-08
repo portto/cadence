@@ -30,8 +30,8 @@ import (
 
 	"github.com/go-test/deep"
 
-	"github.com/onflow/cadence/runtime/parser"
-	"github.com/onflow/cadence/runtime/parser2"
+	"github.com/portto/cadence/runtime/parser"
+	"github.com/portto/cadence/runtime/parser2"
 )
 
 var benchFlag = flag.Bool("bench", false, "benchmark the new and the old parser")

@@ -25,8 +25,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 var testIntegerTypesAndValues = map[string]interpreter.Value{

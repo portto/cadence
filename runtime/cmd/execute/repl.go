@@ -26,9 +26,9 @@ import (
 	"github.com/c-bata/go-prompt"
 	"github.com/logrusorgru/aurora"
 
-	"github.com/onflow/cadence/runtime"
-	"github.com/onflow/cadence/runtime/cmd"
-	"github.com/onflow/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime"
+	"github.com/portto/cadence/runtime/cmd"
+	"github.com/portto/cadence/runtime/interpreter"
 )
 
 const replFilename = "REPL"

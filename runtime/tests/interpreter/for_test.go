@@ -24,7 +24,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/interpreter"
 )
 
 func TestInterpretForStatement(t *testing.T) {

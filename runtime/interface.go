@@ -21,8 +21,8 @@ package runtime
 import (
 	"time"
 
-	"github.com/onflow/cadence"
-	"github.com/onflow/cadence/runtime/ast"
+	"github.com/portto/cadence"
+	"github.com/portto/cadence/runtime/ast"
 )
 
 const BlockHashLength = 32

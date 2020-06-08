@@ -21,7 +21,7 @@ package sema
 import (
 	"github.com/raviqqe/hamt"
 
-	interfaceentry "github.com/onflow/cadence/runtime/common/interface_entry"
+	interfaceentry "github.com/portto/cadence/runtime/common/interface_entry"
 )
 
 // MemberSet is an immutable set of field assignments.

@@ -29,10 +29,10 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/onflow/flow-go-sdk"
-	"github.com/onflow/flow-go-sdk/templates"
+	"github.com/portto/blocto-flow-go-sdk"
+	"github.com/portto/blocto-flow-go-sdk/templates"
 
-	"github.com/onflow/cadence/languageserver/protocol"
+	"github.com/portto/cadence/languageserver/protocol"
 )
 
 const (

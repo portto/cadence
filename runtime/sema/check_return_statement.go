@@ -18,7 +18,7 @@
 
 package sema
 
-import "github.com/onflow/cadence/runtime/ast"
+import "github.com/portto/cadence/runtime/ast"
 
 func (checker *Checker) VisitReturnStatement(statement *ast.ReturnStatement) ast.Repr {
 	functionActivation := checker.functionActivations.Current()

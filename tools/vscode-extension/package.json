@@ -6,7 +6,7 @@
   "version": "0.4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/onflow/cadence.git"
+    "url": "https://github.com/portto/cadence.git"
   },
   "engines": {
     "vscode": "^1.36.0"

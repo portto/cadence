@@ -19,7 +19,7 @@
 package ast
 
 import (
-	"github.com/onflow/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/common"
 )
 
 // InterfaceDeclaration

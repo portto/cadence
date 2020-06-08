@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/parser2/lexer"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/parser2/lexer"
 )
 
 func parseDeclarations(p *parser, endTokenType lexer.TokenType) (declarations []ast.Declaration) {
@@ -361,7 +361,7 @@ func parseImportDeclaration(p *parser) *ast.ImportDeclaration {
 	}
 
 	setIdentifierLocation := func(identifier ast.Identifier) {
-		// TODO: create IdentifierLocation once https://github.com/onflow/cadence/pull/55 is merged
+		// TODO: create IdentifierLocation once https://github.com/portto/cadence/pull/55 is merged
 		//location = ast.IdentifierLocation(identifier.Identifier)
 		locationPos = identifier.Pos
 		endPos = identifier.EndPosition()
@@ -375,7 +375,7 @@ func parseImportDeclaration(p *parser) *ast.ImportDeclaration {
 		case lexer.TokenString, lexer.TokenHexadecimalLiteral:
 			parseStringOrAddressLocation()
 
-		// TODO: enable once https://github.com/onflow/cadence/pull/55 is merged
+		// TODO: enable once https://github.com/portto/cadence/pull/55 is merged
 		//case lexer.TokenIdentifier:
 		//	identifier := tokenToIdentifier(p.current)
 		//	setIdentifierLocation(identifier)
@@ -470,10 +470,10 @@ func parseImportDeclaration(p *parser) *ast.ImportDeclaration {
 			parseLocation()
 
 		} else {
-			// TODO: enable once https://github.com/onflow/cadence/pull/55 is merged
+			// TODO: enable once https://github.com/portto/cadence/pull/55 is merged
 			//setIdentifierLocation(identifier)
 
-			// TODO: remove once https://github.com/onflow/cadence/pull/55 is merged
+			// TODO: remove once https://github.com/portto/cadence/pull/55 is merged
 			panic(fmt.Errorf(
 				"unexpected identifier in import declaration: got %q, expected %q",
 				p.current.Value,

@@ -24,10 +24,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/sema"
-	"github.com/onflow/cadence/runtime/tests/utils"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/tests/utils"
 )
 
 func TestAssert(t *testing.T) {

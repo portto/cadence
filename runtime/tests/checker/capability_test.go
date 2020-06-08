@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/sema"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

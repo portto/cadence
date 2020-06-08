@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/onflow/cadence/runtime/parser2/lexer"
+	"github.com/portto/cadence/runtime/parser2/lexer"
 )
 
 const blockCommentStart = "/*"

@@ -21,7 +21,7 @@ package config
 import (
 	"errors"
 
-	"github.com/onflow/flow-go-sdk/crypto"
+	"github.com/portto/blocto-flow-go-sdk/crypto"
 )
 
 // Config defines configuration for the Language Server. These options are

@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 // StaticType is a shallow representation of a static type (`sema.Type`)

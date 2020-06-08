@@ -23,7 +23,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/onflow/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/ast"
 )
 
 func TestResources_Add(t *testing.T) {

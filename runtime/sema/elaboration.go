@@ -18,7 +18,7 @@
 
 package sema
 
-import "github.com/onflow/cadence/runtime/ast"
+import "github.com/portto/cadence/runtime/ast"
 
 type MemberInfo struct {
 	Member     *Member

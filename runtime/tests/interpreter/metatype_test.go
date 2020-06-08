@@ -23,7 +23,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/onflow/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/interpreter"
 )
 
 func TestInterpretMetaType(t *testing.T) {

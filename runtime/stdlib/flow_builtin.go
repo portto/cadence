@@ -19,10 +19,10 @@
 package stdlib
 
 import (
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 // This file defines functions built in to the Flow runtime.

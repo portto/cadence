@@ -3,7 +3,7 @@
 - Proposal: RFC-NNNN
 - Authors: Author 1, Author 2
 - Status: Awaiting implementation
-- Issues: [#1](https://github.com/onflow/cadence/issues/1), [#2](https://github.com/onflow/cadence/issues/2), etc.
+- Issues: [#1](https://github.com/portto/cadence/issues/1), [#2](https://github.com/portto/cadence/issues/2), etc.
 
 ## Summary
 

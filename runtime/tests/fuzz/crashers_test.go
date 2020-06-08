@@ -26,7 +26,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/onflow/cadence"
+	"github.com/portto/cadence"
 )
 
 const crashersDir = "../../../crashers"

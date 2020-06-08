@@ -10,9 +10,9 @@ import (
 
 	"github.com/fxamacker/cbor/v2"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 // A Decoder decodes CBOR-encoded representations of values.

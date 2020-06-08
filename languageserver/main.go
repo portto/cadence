@@ -19,7 +19,7 @@
 package main
 
 import (
-	"github.com/onflow/cadence/languageserver/server"
+	"github.com/portto/cadence/languageserver/server"
 
 	"os"
 

@@ -6,12 +6,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/errors"
-	"github.com/onflow/cadence/runtime/parser"
-	"github.com/onflow/cadence/runtime/parser2"
-	"github.com/onflow/cadence/runtime/sema"
-	"github.com/onflow/cadence/runtime/tests/utils"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/parser"
+	"github.com/portto/cadence/runtime/parser2"
+	"github.com/portto/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/tests/utils"
 )
 
 func ParseAndCheck(t *testing.T, code string) (*sema.Checker, error) {

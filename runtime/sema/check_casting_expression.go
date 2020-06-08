@@ -19,8 +19,8 @@
 package sema
 
 import (
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/errors"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/errors"
 )
 
 func (checker *Checker) VisitCastingExpression(expression *ast.CastingExpression) ast.Repr {

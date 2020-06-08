@@ -23,8 +23,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/sema"
-	"github.com/onflow/cadence/runtime/stdlib"
+	"github.com/portto/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/stdlib"
 )
 
 func TestCheckAssertWithoutMessage(t *testing.T) {

@@ -21,8 +21,8 @@ package parser2
 import (
 	"fmt"
 
-	"github.com/onflow/cadence/runtime/ast"
-	"github.com/onflow/cadence/runtime/parser2/lexer"
+	"github.com/portto/cadence/runtime/ast"
+	"github.com/portto/cadence/runtime/parser2/lexer"
 )
 
 func parseParameterList(p *parser) (parameterList *ast.ParameterList) {

@@ -31,10 +31,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence/runtime/ast"
-	oldParser "github.com/onflow/cadence/runtime/parser"
-	"github.com/onflow/cadence/runtime/parser2/lexer"
-	"github.com/onflow/cadence/runtime/tests/utils"
+	"github.com/portto/cadence/runtime/ast"
+	oldParser "github.com/portto/cadence/runtime/parser"
+	"github.com/portto/cadence/runtime/parser2/lexer"
+	"github.com/portto/cadence/runtime/tests/utils"
 )
 
 func TestParseSimpleInfixExpression(t *testing.T) {

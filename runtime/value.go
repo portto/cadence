@@ -19,9 +19,9 @@
 package runtime
 
 import (
-	"github.com/onflow/cadence/runtime/common"
-	"github.com/onflow/cadence/runtime/interpreter"
-	"github.com/onflow/cadence/runtime/sema"
+	"github.com/portto/cadence/runtime/common"
+	"github.com/portto/cadence/runtime/interpreter"
+	"github.com/portto/cadence/runtime/sema"
 )
 
 // An exportableValue is a Cadence value emitted by the runtime.

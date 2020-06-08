@@ -25,8 +25,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/onflow/cadence"
-	"github.com/onflow/cadence/runtime/common"
+	"github.com/portto/cadence"
+	"github.com/portto/cadence/runtime/common"
 )
 
 const simpleDeferralContract = `
